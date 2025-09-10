@@ -28,8 +28,8 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
-            <Cpu className="h-8 w-8 text-black" />
             <img src="images/logo.png" alt="VIKABot Logo" className="h-8 w-8" />
+            <Cpu className="h-8 w-8 text-black" />
             <span className="text-xl font-bold text-black">VIKABot</span>
           </div>
           
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
           isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
         }`}>
           <nav className="py-4 space-y-2 bg-white border-t border-gray-200">
-            <img src="images/logo.png" alt="Logo">
+            <img src="images/logo.png" alt="Logo"/>
             {['About', 'Products', 'Services', 'Contact'].map((item) => (
               <button
                 key={item}
