@@ -29,11 +29,11 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
             <Cpu className="h-8 w-8 text-black" />
+            <img src="images/logo.png" alt="VIKABot Logo" className="h-8 w-8" />
             <span className="text-xl font-bold text-black">VIKABot</span>
           </div>
           
           <nav className="hidden md:flex space-x-8">
-            <img src="images/logo.png" alt="Logo">
             {['About', 'Products', 'Services', 'Contact'].map((item) => (
               <button
                 key={item}
