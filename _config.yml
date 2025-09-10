@@ -1,0 +1,87 @@
+# Site settings
+title: VIKABot
+email: support@vikabot.com
+description: >-
+  Leading AI hardware infrastructure solutions provider, delivering 
+  comprehensive technology services from consultation to implementation 
+  with industry-leading expertise.
+baseurl: ""
+url: "https://www.vikabot.com"
+twitter_username: vikabot
+github_username: vikabot
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Artitech theme settings
+logo: /assets/images/logo.png
+author: VIKABot Team
+tagline: AI Hardware Infrastructure Solutions
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Products
+    url: /products/
+  - title: Services
+    url: /services/
+  - title: Contact
+    url: /contact/
+
+# Social links
+social:
+  - platform: email
+    url: mailto:support@vikabot.com
+  - platform: linkedin
+    url: https://linkedin.com/company/vikabot
+
+# Collections
+collections:
+  products:
+    output: true
+    permalink: /:collection/:name/
+  services:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "product"
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "service"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - src/
+  - dist/
+  - package.json
+  - package-lock.json
+  - vite.config.ts
+  - tsconfig.json
