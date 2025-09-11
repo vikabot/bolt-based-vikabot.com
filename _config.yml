@@ -18,8 +18,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Artitech theme settings
-logo: /assets/images/logo.png
+# VIKABot theme settings
 author: VIKABot Team
 tagline: AI Hardware Infrastructure Solutions
 
@@ -43,33 +42,6 @@ social:
   - platform: linkedin
     url: https://linkedin.com/company/vikabot
 
-# Collections
-collections:
-  products:
-    output: true
-    permalink: /:collection/:name/
-  services:
-    output: true
-    permalink: /:collection/:name/
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "products"
-    values:
-      layout: "product"
-  - scope:
-      path: ""
-      type: "services"
-    values:
-      layout: "service"
-
 # Exclude from processing
 exclude:
   - Gemfile
@@ -79,9 +51,3 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - src/
-  - dist/
-  - package.json
-  - package-lock.json
-  - vite.config.ts
-  - tsconfig.json
