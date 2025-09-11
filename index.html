@@ -3,401 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ViKaBot - AI Hardware Infrastructure Solutions Company </title>
-    <meta name="description" content="ViKaBot provides complete AI hardware infrastructure solutions, mobile AI app testing, and IT recruitment consultancy services.">
+    <title>VIKABot - AI & Hardware Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#000000',
-                        secondary: '#ffffff',
-                        accent: '#f3f4f6'
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body class="bg-white text-black font-sans">
+<body class="bg-gray-50">
     <!-- Header -->
-    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold">ViKaBot</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-gray-600 transition-colors">Home</a>
-                    <a href="#about" class="hover:text-gray-600 transition-colors">About</a>
-                    <a href="#products" class="hover:text-gray-600 transition-colors">Products</a>
-                    <a href="#services" class="hover:text-gray-600 transition-colors">Services</a>
-                    <a href="#contact" class="hover:text-gray-600 transition-colors">Contact</a>
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <div class="flex items-center">
+                    <i data-lucide="zap" class="h-8 w-8 text-blue-600 mr-3"></i>
+                    <span class="text-2xl font-bold text-gray-900">VIKABot</span>
                 </div>
-                <button class="md:hidden" onclick="toggleMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#products" class="text-gray-700 hover:text-blue-600 transition-colors">Products</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
                 </button>
-            </div>
-            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
-                <a href="#home" class="block py-2 hover:text-gray-600">Home</a>
-                <a href="#about" class="block py-2 hover:text-gray-600">About</a>
-                <a href="#products" class="block py-2 hover:text-gray-600">Products</a>
-                <a href="#services" class="block py-2 hover:text-gray-600">Services</a>
-                <a href="#contact" class="block py-2 hover:text-gray-600">Contact</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-20 min-h-screen flex items-center">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                    AI Hardware<br>
-                    <span class="text-gray-600">Infrastructure</span><br>
-                    Solutions
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                    Complete IT hardware solutions, AI testing services, and specialized recruitment consultancy for the next generation of technology.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="bg-black text-white px-8 py-4 hover:bg-gray-800 transition-colors">
-                        Get Started
-                    </a>
-                    <a href="#about" class="border border-black px-8 py-4 hover:bg-black hover:text-white transition-colors">
-                        Learn More
-                    </a>
-                </div>
+    <section id="home" class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-6">Welcome to VIKABot</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Leading the future with cutting-edge AI solutions and innovative hardware technologies. 
+                We transform businesses through intelligent automation and advanced computing systems.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Get Started
+                </a>
+                <a href="#about" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                    Learn More
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">About ViKaBot</h2>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <p class="text-lg text-gray-700 mb-6">
-                            ViKaBot is a leading AI hardware infrastructure company specializing in complete IT solutions, 
-                            mobile AI application testing, and high-end IT recruitment consultancy.
-                        </p>
-                        <p class="text-lg text-gray-700 mb-6">
-                            We bridge the gap between cutting-edge AI hardware and practical business applications, 
-                            ensuring our clients stay ahead in the rapidly evolving technology landscape.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-black rounded-full mr-4"></div>
-                                <span>Expert hardware integration and deployment</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-black rounded-full mr-4"></div>
-                                <span>Comprehensive AI testing and certification</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-black rounded-full mr-4"></div>
-                                <span>Specialized IT talent acquisition</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
-                        <p class="text-gray-700">
-                            To empower businesses with robust AI hardware infrastructure and expert services 
-                            that drive innovation and operational excellence in the digital age.
-                        </p>
-                    </div>
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About VIKABot</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Founded with a vision to revolutionize technology integration, VIKABot stands at the forefront of AI and hardware innovation.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <i data-lucide="brain" class="h-12 w-12 text-blue-600 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">AI Innovation</h3>
+                    <p class="text-gray-600">Cutting-edge artificial intelligence solutions that adapt and learn from your business needs.</p>
+                </div>
+                <div class="text-center p-6">
+                    <i data-lucide="cpu" class="h-12 w-12 text-blue-600 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Hardware Excellence</h3>
+                    <p class="text-gray-600">Premium hardware solutions designed for optimal performance and reliability.</p>
+                </div>
+                <div class="text-center p-6">
+                    <i data-lucide="users" class="h-12 w-12 text-blue-600 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Expert Support</h3>
+                    <p class="text-gray-600">Dedicated team of professionals providing comprehensive support and consultation.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Hardware Products</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 p-8 hover:shadow-lg transition-shadow">
-                        <h3 class="text-2xl font-bold mb-4">NVIDIA Jetson Modules</h3>
-                        <p class="text-gray-700 mb-6">
-                            Latest Jetson Orin and Xavier modules for edge AI computing, 
-                            perfect for robotics and autonomous systems.
-                        </p>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Jetson Orin Nano</li>
-                            <li>• Jetson Orin NX</li>
-                            <li>• Jetson AGX Orin</li>
-                            <li>• Custom carrier boards</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-8 hover:shadow-lg transition-shadow">
-                        <h3 class="text-2xl font-bold mb-4">Intel NUC Systems</h3>
-                        <p class="text-gray-700 mb-6">
-                            Compact, powerful computing solutions for edge deployment 
-                            and industrial applications.
-                        </p>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Intel NUC 13 Pro</li>
-                            <li>• NUC Mini PCs</li>
-                            <li>• Industrial NUC variants</li>
-                            <li>• Custom configurations</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-8 hover:shadow-lg transition-shadow">
-                        <h3 class="text-2xl font-bold mb-4">Enterprise Hardware</h3>
-                        <p class="text-gray-700 mb-6">
-                            Complete IT infrastructure including servers, storage, 
-                            and networking equipment for enterprise deployments.
-                        </p>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Server systems</li>
-                            <li>• Storage solutions</li>
-                            <li>• Network equipment</li>
-                            <li>• Workstations</li>
-                        </ul>
-                    </div>
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Products</h2>
+                <p class="text-xl text-gray-600">Innovative hardware solutions for modern businesses</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <i data-lucide="server" class="h-10 w-10 text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">AI Servers</h3>
+                    <p class="text-gray-600 mb-4">High-performance servers optimized for AI workloads and machine learning applications.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• GPU acceleration support</li>
+                        <li>• Scalable architecture</li>
+                        <li>• Enterprise-grade reliability</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <i data-lucide="smartphone" class="h-10 w-10 text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Smart Devices</h3>
+                    <p class="text-gray-600 mb-4">IoT-enabled devices that seamlessly integrate with your existing infrastructure.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Wireless connectivity</li>
+                        <li>• Real-time monitoring</li>
+                        <li>• Energy efficient</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <i data-lucide="monitor" class="h-10 w-10 text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Control Systems</h3>
+                    <p class="text-gray-600 mb-4">Advanced control systems for industrial automation and process management.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Intuitive interfaces</li>
+                        <li>• Remote access capability</li>
+                        <li>• Robust security features</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Solutions & Services</h2>
-                <div class="space-y-12">
-                    <div class="bg-white p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold mb-4">Complete IT Hardware Solutions</h3>
-                        <p class="text-gray-700 mb-6">
-                            End-to-end IT hardware lifecycle management from procurement to maintenance.
-                        </p>
-                        <div class="grid md:grid-cols-4 gap-4 text-sm">
-                            <div class="text-center p-4 border border-gray-200">
-                                <div class="font-semibold mb-2">Installation</div>
-                                <div class="text-gray-600">Professional setup and configuration</div>
-                            </div>
-                            <div class="text-center p-4 border border-gray-200">
-                                <div class="font-semibold mb-2">Commissioning</div>
-                                <div class="text-gray-600">System testing and validation</div>
-                            </div>
-                            <div class="text-center p-4 border border-gray-200">
-                                <div class="font-semibold mb-2">Integration</div>
-                                <div class="text-gray-600">Seamless system integration</div>
-                            </div>
-                            <div class="text-center p-4 border border-gray-200">
-                                <div class="font-semibold mb-2">AMC Support</div>
-                                <div class="text-gray-600">Ongoing maintenance contracts</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold mb-4">AI Testing & Development Services</h3>
-                        <p class="text-gray-700 mb-6">
-                            Comprehensive AI application testing and certification services for mobile, robotics, and IoT platforms.
-                        </p>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div>
-                                <h4 class="font-semibold mb-2">Mobile AI Apps</h4>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>• Performance testing</li>
-                                    <li>• Accuracy validation</li>
-                                    <li>• Device compatibility</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">Robotics & IoT</h4>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>• Complete stack testing</li>
-                                    <li>• Integration validation</li>
-                                    <li>• Performance optimization</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">Certification</h4>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>• ASPICE compliance</li>
-                                    <li>• Industry standards</li>
-                                    <li>• Quality assurance</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold mb-4">IT Recruitment Consultancy</h3>
-                        <p class="text-gray-700 mb-6">
-                            Specialized recruitment services for high-end IT and AI professionals.
-                        </p>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h4 class="font-semibold mb-3">Expertise Areas</h4>
-                                <ul class="text-sm text-gray-600 space-y-2">
-                                    <li>• AI/ML Engineers</li>
-                                    <li>• Robotics Specialists</li>
-                                    <li>• Hardware Engineers</li>
-                                    <li>• DevOps Professionals</li>
-                                    <li>• System Architects</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-3">Services</h4>
-                                <ul class="text-sm text-gray-600 space-y-2">
-                                    <li>• Executive search</li>
-                                    <li>• Technical assessment</li>
-                                    <li>• Contract staffing</li>
-                                    <li>• Team building</li>
-                                    <li>• Skill gap analysis</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Comprehensive solutions tailored to your needs</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-lucide="settings" class="h-6 w-6 text-blue-600 mr-3"></i>
+                        IT Solutions
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3 mt-0.5"></i>
+                            <span>Network infrastructure design and implementation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3 mt-0.5"></i>
+                            <span>Cloud migration and management services</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3 mt-0.5"></i>
+                            <span>Cybersecurity assessment and protection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3 mt-0.5"></i>
+                            <span>24/7 technical support and maintenance</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-lucide="flask-conical" class="h-6 w-6 text-blue-600 mr-3"></i>
+                        AI Testing & Development
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3 mt-0.5"></i>
+                            <span>Machine learning model development and training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3 mt-0.5"></i>
+                            <span>AI system integration and deployment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3 mt-0.5"></i>
+                            <span>Performance testing and optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3 mt-0.5"></i>
+                            <span>Custom AI solution development</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Get In Touch</h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="font-semibold">Email</div>
-                                <div class="text-gray-600">support@vikabot.com</div>
-                            </div>
-                            <div>
-                                <div class="font-semibold">Business Hours</div>
-                                <div class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</div>
-                            </div>
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-600">Ready to transform your business? Get in touch with our experts.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i data-lucide="mail" class="h-5 w-5 text-blue-600 mr-3"></i>
+                            <span>contact@vikabot.com</span>
                         </div>
-                        <div class="mt-8">
-                            <h4 class="font-semibold mb-4">Why Choose ViKaBot?</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li>• Industry-leading expertise</li>
-                                <li>• Comprehensive service portfolio</li>
-                                <li>• Proven track record</li>
-                                <li>• 24/7 support availability</li>
-                            </ul>
+                        <div class="flex items-center">
+                            <i data-lucide="phone" class="h-5 w-5 text-blue-600 mr-3"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-blue-600 mr-3"></i>
+                            <span>123 Innovation Drive, Tech City, TC 12345</span>
                         </div>
                     </div>
-                    <div class="bg-gray-50 p-8">
-                        <form id="contact-form" onsubmit="handleSubmit(event)">
-                            <div class="space-y-6">
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Name *</label>
-                                    <input type="text" name="name" required class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Email *</label>
-                                    <input type="email" name="email" required class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Company</label>
-                                    <input type="text" name="company" class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Service Interest</label>
-                                    <select name="service" class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none">
-                                        <option value="">Select a service</option>
-                                        <option value="hardware">IT Hardware Solutions</option>
-                                        <option value="testing">AI Testing Services</option>
-                                        <option value="recruitment">Recruitment Consultancy</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Message *</label>
-                                    <textarea name="message" required rows="4" class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none"></textarea>
-                                </div>
-                                <button type="submit" class="w-full bg-black text-white py-3 hover:bg-gray-800 transition-colors">
-                                    Send Message
-                                </button>
-                            </div>
-                        </form>
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Business Hours</h4>
+                        <div class="space-y-2 text-gray-600">
+                            <div>Monday - Friday: 9:00 AM - 6:00 PM</div>
+                            <div>Saturday: 10:00 AM - 4:00 PM</div>
+                            <div>Sunday: Closed</div>
+                        </div>
                     </div>
+                </div>
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12">
-        <div class="container mx-auto px-6">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <div class="text-2xl font-bold mb-4">ViKaBot</div>
-                    <p class="text-gray-400">
-                        Leading AI hardware infrastructure solutions for the future of technology.
-                    </p>
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="zap" class="h-6 w-6 text-blue-400 mr-2"></i>
+                        <span class="text-xl font-bold">VIKABot</span>
+                    </div>
+                    <p class="text-gray-400">Leading the future with AI and hardware innovation.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Services</h4>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li>Hardware Solutions</li>
-                        <li>AI Testing</li>
-                        <li>Recruitment</li>
-                        <li>Consulting</li>
+                        <li><a href="#" class="hover:text-white transition-colors">AI Servers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Smart Devices</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Control Systems</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Products</h4>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li>Jetson Modules</li>
-                        <li>Intel NUC</li>
-                        <li>Enterprise Hardware</li>
-                        <li>Custom Solutions</li>
+                        <li><a href="#" class="hover:text-white transition-colors">IT Solutions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">AI Testing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Consulting</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li>support@vikabot.com</li>
-                        <li>Business Hours:</li>
-                        <li>Mon-Fri 9AM-6PM</li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 ViKaBot. All rights reserved.</p>
+                <p>&copy; 2024 VIKABot. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
+        // Initialize Lucide icons
+        lucide.createIcons();
 
-        function handleSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            
-            const subject = `ViKaBot Inquiry from ${formData.get('name')}`;
-            const body = `Name: ${formData.get('name')}
-Email: ${formData.get('email')}
-Company: ${formData.get('company') || 'Not specified'}
-Service Interest: ${formData.get('service') || 'Not specified'}
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            // Add mobile menu functionality if needed
+        });
 
-Message:
-${formData.get('message')}`;
-
-            const mailtoLink = `mailto:support@vikabot.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-        }
-
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -409,6 +306,13 @@ ${formData.get('message')}`;
                     });
                 }
             });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
         });
     </script>
 </body>
