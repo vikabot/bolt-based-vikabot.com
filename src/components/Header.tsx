@@ -28,6 +28,7 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
+            <img src="/path/to/logo.png" alt="VikaBot Logo" className="h-8 w-8" />
             <Cpu className="h-8 w-8 text-black" />
             <span className="text-xl font-bold text-black">VIKABot</span>
           </div>
