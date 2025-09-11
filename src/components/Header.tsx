@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Cpu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from './images/logo.png';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,8 +28,8 @@ const Header: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
-            <Cpu className="h-8 w-8 text-black" />
+          <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('hero')}> 
+            <img src={logo} alt="VIKABot Logo" className="h-8 w-8" />
             <span className="text-xl font-bold text-black">VIKABot</span>
           </div>
           
@@ -56,7 +57,7 @@ const Header: React.FC = () => {
         {/* Mobile menu */}
         <div className={`md:hidden transition-all duration-300 ${
           isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}>
+        }`}> 
           <nav className="py-4 space-y-2 bg-white border-t border-gray-200">
             {['About', 'Products', 'Services', 'Contact'].map((item) => (
               <button
