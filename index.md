@@ -11,7 +11,7 @@ title: Home
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
                 <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-                    VIKA<span class="text-gray-600">Bot</span>
+                    Vika<span class="text-gray-600">Bot</span>
                 </h1>
             </div>
             
@@ -42,7 +42,7 @@ title: Home
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <p class="text-lg text-gray-700 mb-6">
-                        VIKABot is a leading AI hardware infrastructure company specializing in complete IT solutions, 
+                        VikaBot is a leading AI hardware infrastructure company specializing in complete IT solutions, 
                         mobile AI application testing, and high-end IT recruitment consultancy.
                     </p>
                     <p class="text-lg text-gray-700 mb-6">
