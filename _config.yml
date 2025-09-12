@@ -1,5 +1,5 @@
 # Site settings
-title: VIKABot
+title: VikaBot
 email: support@vikabot.com
 description: >-
   Leading AI hardware infrastructure solutions provider, delivering 
@@ -19,7 +19,7 @@ plugins:
   - jekyll-seo-tag
 
 # VIKABot theme settings
-author: VIKABot Team
+author: VikaBot Team
 tagline: AI Hardware Infrastructure Solutions
 
 # Navigation
