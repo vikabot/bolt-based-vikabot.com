@@ -38,7 +38,7 @@ title: Home
 <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">About VIKABot</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">About VikaBot</h2>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <p class="text-lg text-gray-700 mb-6">
