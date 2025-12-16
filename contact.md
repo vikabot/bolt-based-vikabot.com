@@ -103,14 +103,31 @@ permalink: /contact/
                             </div>
 
                             <div>
-                                <label for="inquiry-type" class="block text-sm font-medium text-black mb-2">Subject *</label>
+                                <label for="inquiry-type" class="block text-sm font-medium text-black mb-2">How can we help you? *</label>
                                 <select id="inquiry-type" name="inquiry_type" required class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none transition-colors">
-                                    <option value="">Select a subject</option>
-                                    <option value="Hardware Solutions">Hardware Solutions</option>
-                                    <option value="AI Testing Services">AI Testing Services</option>
-                                    <option value="Recruitment Services">Recruitment Services</option>
-                                    <option value="Technical Support">Technical Support</option>
-                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="">Select inquiry type</option>
+                                    <optgroup label="Technical Information">
+                                        <option value="Request Technical Datasheet">Request Technical Datasheet / Specifications</option>
+                                        <option value="Request Quote">Request Quote (RFQ)</option>
+                                        <option value="Product Comparison">Product Comparison & Selection Guidance</option>
+                                    </optgroup>
+                                    <optgroup label="Engineering Services">
+                                        <option value="Discovery Call">Schedule Discovery Call with Engineers</option>
+                                        <option value="System Integration">Custom System Integration Consultation</option>
+                                        <option value="ASPICE Certification">ASPICE Compliance & Validation Services</option>
+                                        <option value="POC Development">Proof-of-Concept (POC) Development</option>
+                                    </optgroup>
+                                    <optgroup label="Products & Solutions">
+                                        <option value="NVIDIA Jetson">NVIDIA Jetson Modules (Orin/Xavier)</option>
+                                        <option value="Intel NUC">Intel NUC Systems</option>
+                                        <option value="RISC-V">RISC-V Development Boards</option>
+                                        <option value="DGX Systems">Enterprise AI Servers (DGX/Rack/Tower)</option>
+                                    </optgroup>
+                                    <optgroup label="Support & Services">
+                                        <option value="Technical Support">Technical Support (AMC Customers)</option>
+                                        <option value="IT Recruitment">IT Recruitment Services</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                    </optgroup>
                                 </select>
                             </div>
 
