@@ -7,10 +7,27 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+vendor/bundle/
+vendor/cache/
+vendor/gems/
+vendor/ruby/
+
+# Build outputs
 dist
 dist-ssr
 *.local
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Testing and CI/CD
+.lighthouseci/
+htmlproofer-cache/
+coverage/
+.nyc_output/
 
 # Editor directories and files
 .vscode/*
@@ -22,4 +39,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment and secrets
 .env
+.env.local
+.env.*.local
+
+# OS files
+Thumbs.db

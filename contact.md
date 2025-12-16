@@ -72,7 +72,19 @@ permalink: /contact/
                 </div>
 
                 <div class="bg-gray-50 p-8 border border-gray-200">
-                    <form id="contact-form" onsubmit="handleSubmit(event)">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="16dd6311-986e-496a-a71d-44463d906a40">
+
+                        <!-- Optional: Redirect to custom thank you page -->
+                        <input type="hidden" name="redirect" value="https://www.vikabot.com/thank-you">
+
+                        <!-- Optional: Subject line for email -->
+                        <input type="hidden" name="subject" id="email-subject" value="New Contact Form Submission from VikaBot.com">
+
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                         <div class="space-y-6">
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
@@ -84,15 +96,15 @@ permalink: /contact/
                                     <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none transition-colors">
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <label for="company" class="block text-sm font-medium text-black mb-2">Company</label>
                                 <input type="text" id="company" name="company" class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none transition-colors">
                             </div>
-                            
+
                             <div>
-                                <label for="subject" class="block text-sm font-medium text-black mb-2">Subject *</label>
-                                <select id="subject" name="subject" required class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none transition-colors">
+                                <label for="inquiry-type" class="block text-sm font-medium text-black mb-2">Subject *</label>
+                                <select id="inquiry-type" name="inquiry_type" required class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none transition-colors">
                                     <option value="">Select a subject</option>
                                     <option value="Hardware Solutions">Hardware Solutions</option>
                                     <option value="AI Testing Services">AI Testing Services</option>
@@ -101,15 +113,17 @@ permalink: /contact/
                                     <option value="General Inquiry">General Inquiry</option>
                                 </select>
                             </div>
-                            
+
                             <div>
                                 <label for="message" class="block text-sm font-medium text-black mb-2">Message *</label>
                                 <textarea id="message" name="message" rows="5" required class="w-full p-3 border border-gray-300 focus:border-black focus:outline-none transition-colors resize-vertical" placeholder="Tell us about your requirements..."></textarea>
                             </div>
-                            
-                            <button type="submit" class="w-full bg-black text-white py-3 px-6 font-medium hover:bg-gray-800 transition-colors">
+
+                            <button type="submit" id="submit-btn" class="w-full bg-black text-white py-3 px-6 font-medium hover:bg-gray-800 transition-colors">
                                 Send Message
                             </button>
+
+                            <div id="form-message" class="hidden p-4 text-center"></div>
                         </div>
                     </form>
                 </div>
