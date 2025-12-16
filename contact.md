@@ -73,8 +73,8 @@ permalink: /contact/
 
                 <div class="bg-gray-50 p-8 border border-gray-200">
                     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                        <!-- Web3Forms Access Key - Replace with your own from https://web3forms.com -->
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="16dd6311-986e-496a-a71d-44463d906a40">
 
                         <!-- Optional: Redirect to custom thank you page -->
                         <input type="hidden" name="redirect" value="https://www.vikabot.com/thank-you">
