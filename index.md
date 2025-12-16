@@ -15,20 +15,20 @@ title: Home
                 </h1>
             </div>
             
-            <h2 class="text-xl md:text-2xl font-light text-gray-700 mb-8 leading-relaxed">
-                {{ site.tagline }}
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-8 leading-relaxed">
+                Accelerate Time-to-Market for Your Embedded AI Systems
             </h2>
-            
+
             <p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-                {{ site.description }}
+                Industrial-grade AI hardware, ASPICE-certified validation services, and complete system integration for robotics, edge AI, and enterprise deployments. From specification to production deployment.
             </p>
-            
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ '/products/' | relative_url }}" class="bg-black text-white px-8 py-4 hover:bg-gray-800 transition-colors">
-                    Explore Products
+                <a href="{{ '/contact/' | relative_url }}" class="bg-black text-white px-8 py-4 hover:bg-gray-800 transition-colors font-semibold">
+                    Request Technical Datasheet
                 </a>
-                <a href="{{ '/contact/' | relative_url }}" class="border border-black px-8 py-4 hover:bg-black hover:text-white transition-colors">
-                    Get Started
+                <a href="{{ '/products/' | relative_url }}" class="border border-black px-8 py-4 hover:bg-black hover:text-white transition-colors font-semibold">
+                    View Technical Specs
                 </a>
             </div>
         </div>
