@@ -1,0 +1,45 @@
+{
+  "name": "vikabot-website",
+  "version": "1.0.0",
+  "description": "VikaBot - AI Hardware Infrastructure Solutions",
+  "private": true,
+  "scripts": {
+    "test": "npm run lint && npm run spellcheck",
+    "lint": "npm run lint:js && npm run lint:md",
+    "lint:js": "eslint assets/js/**/*.js",
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore _site",
+    "spellcheck": "cspell '**/*.{md,html,js}' --exclude 'node_modules/**' --exclude '_site/**' --exclude 'vendor/**'",
+    "lighthouse": "lhci autorun",
+    "serve": "bundle exec jekyll serve --livereload",
+    "build": "bundle exec jekyll build",
+    "clean": "bundle exec jekyll clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikabot/bolt-based-vikabot.com.git"
+  },
+  "keywords": [
+    "AI",
+    "hardware",
+    "embedded",
+    "NVIDIA",
+    "Jetson",
+    "Intel",
+    "NUC",
+    "RISC-V",
+    "B2B"
+  ],
+  "author": "VikaBot Team",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@lhci/cli": "^0.13.0",
+    "cspell": "^8.0.0",
+    "eslint": "^8.56.0",
+    "http-server": "^14.1.1",
+    "markdownlint-cli": "^0.39.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

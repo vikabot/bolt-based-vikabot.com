@@ -9,6 +9,11 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag"
 end
 
+# Testing and validation
+group :test, :development do
+  gem "html-proofer", "~> 5.0"
+end
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
