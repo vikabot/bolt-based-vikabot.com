@@ -242,16 +242,21 @@
 
 <header class="hero">
     <div class="container">
-        <h1>DGX Spark vs Jetson Thor vs Framework Desktop</h1>
-        <p class="subtitle">A Complete Comparison of Desktop AI Compute Platforms for Developers, Roboticists, and AI Researchers in 2025</p>
-        <p class="date">Published: December 2025 | Updated with latest benchmarks and pricing</p>
+        <h1>DGX Spark vs RTX Spark vs Jetson Thor vs Framework Desktop</h1>
+        <p class="subtitle">A Complete Comparison of Desktop & Laptop AI Compute Platforms for Developers, Roboticists, and AI Researchers in 2025-2026</p>
+        <p class="date">Published: December 2025 | Updated July 2026 with RTX Spark N1/N1X benchmarks</p>
     </div>
 </header>
 
 <main class="container">
 <article>
 
-<p><strong>The landscape of desktop AI compute has fundamentally shifted in 2025.</strong> Three platforms are now competing for the attention of AI developers, robotics engineers, and researchers: NVIDIA's DGX Spark for general AI development (predominantly targeted for LLM training & custom model generation in-house at your desk rather than relying on massive datacenters), Jetson Thor for robotics and edge AI (inferencing and end-use deployment), and Framework Desktop for budget-conscious AI developers. This comprehensive guide breaks down specifications, performance, pricing, and ideal use cases to help you make the right choice.</p>
+<p><strong>The landscape of desktop and laptop AI compute has fundamentally shifted in 2025-2026.</strong> Four major platforms are now competing for the attention of AI developers, robotics engineers, and researchers: NVIDIA's DGX Spark for desktop AI development, <strong>RTX Spark (N1/N1X)</strong> for agentic AI laptops and consumer Windows PCs, Jetson Thor for robotics and edge AI, and Framework Desktop for budget-conscious AI developers. This comprehensive guide breaks down specifications, performance, benchmarks, pricing, and ideal use cases to help you make the right choice.</p>
+
+<div class="callout" style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border-left: 5px solid #f39c12; margin: 25px 0;">
+    <h4 style="color: #d35400;">🆕 July 2026 Update: RTX Spark Announced</h4>
+    <p>NVIDIA unveiled <strong>RTX Spark</strong> at Computex 2026—adapting the Grace Blackwell architecture into consumer Windows-on-Arm laptops and compact desktops. The N1X variant delivers 120 TOPS with a Reasoning Acceleration Unit, enabling local agentic AI with 120B-parameter LLMs. First devices ship Q4 2026 from Asus, Dell, HP, Lenovo, and Microsoft Surface.</p>
+</div>
 
 <h2>Quick Comparison: Specifications at a Glance</h2>
 
@@ -276,6 +281,29 @@
                         <text x="40" y="38" font-size="6" fill="#333" text-anchor="middle" font-weight="bold">NVIDIA</text>
                     </svg>
                     <div>DGX Spark</div>
+                </div>
+            </th>
+            <th style="background: #1a5490;">
+                <div style="text-align:center;">
+                    <svg width="80" height="50" viewBox="0 0 80 50" style="margin-bottom:8px;">
+                        <!-- RTX Spark - Sleek laptop -->
+                        <defs>
+                            <linearGradient id="rtxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1a5490"/>
+                                <stop offset="50%" style="stop-color:#2d7dc5"/>
+                                <stop offset="100%" style="stop-color:#1a5490"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Laptop base -->
+                        <rect x="5" y="35" width="70" height="6" rx="2" fill="url(#rtxGrad)" stroke="#0d2a47" stroke-width="1"/>
+                        <!-- Laptop screen -->
+                        <rect x="12" y="10" width="56" height="28" rx="2" fill="url(#rtxGrad)" stroke="#0d2a47" stroke-width="1"/>
+                        <!-- Screen glow -->
+                        <rect x="16" y="14" width="48" height="20" rx="1" fill="#76b900" opacity="0.3"/>
+                        <circle cx="40" cy="24" r="6" fill="#76b900"/>
+                        <text x="40" y="27" font-size="5" fill="#fff" text-anchor="middle" font-weight="bold">RTX</text>
+                    </svg>
+                    <div>RTX Spark (N1X)</div>
                 </div>
             </th>
             <th>
@@ -333,62 +361,79 @@
         <tr>
             <td><strong>AI Performance</strong></td>
             <td class="highlight">1,000 TOPS (FP4)</td>
+            <td class="highlight" style="background: #e3f2fd !important;">120 TOPS (RAU @ 15W)</td>
             <td class="highlight">2,070 TOPS (FP4)</td>
             <td>~50 TOPS (NPU)</td>
         </tr>
         <tr>
             <td><strong>Memory</strong></td>
             <td>128GB LPDDR5x</td>
+            <td>Up to 128GB LPDDR5x</td>
             <td>128GB LPDDR5x</td>
             <td>Up to 128GB LPDDR5x</td>
         </tr>
         <tr>
             <td><strong>Memory Bandwidth</strong></td>
             <td>273 GB/s</td>
+            <td>600 GB/s (NVLink)</td>
             <td>273 GB/s</td>
             <td>256 GB/s</td>
         </tr>
         <tr>
             <td><strong>CPU</strong></td>
             <td>20-core ARM (Grace)</td>
+            <td>20-core ARM (10×X925 + 10×A725)</td>
             <td>14-core ARM Neoverse V3AE</td>
             <td>16-core AMD Ryzen™ AI Max+ 395</td>
         </tr>
         <tr>
             <td><strong>GPU Architecture</strong></td>
             <td>NVIDIA Blackwell</td>
+            <td>NVIDIA Blackwell (6,144 CUDA)</td>
             <td>NVIDIA Blackwell</td>
             <td>AMD Radeon™ 8060S + NPU</td>
         </tr>
         <tr>
             <td><strong>Power (TDP)</strong></td>
             <td>~170W</td>
+            <td class="highlight">15-45W (laptop)</td>
             <td>40-130W</td>
             <td>~140W</td>
         </tr>
         <tr>
             <td><strong>Form Factor</strong></td>
-            <td>150×150×50mm</td>
+            <td>150×150×50mm Desktop</td>
+            <td class="highlight">13-17" Laptop</td>
             <td>Dev Kit (larger)</td>
             <td>4.5L Mini-ITX</td>
         </tr>
         <tr>
             <td><strong>Operating System</strong></td>
             <td>DGX OS (Ubuntu)</td>
+            <td>Windows 11 on Arm</td>
             <td>JetPack OS</td>
             <td>Windows/Linux</td>
         </tr>
         <tr>
             <td><strong>Relative Pricing</strong></td>
             <td>Premium (Founders Edition)</td>
+            <td>Consumer-friendly</td>
             <td>Mid-range</td>
             <td class="highlight">Most Affordable</td>
         </tr>
         <tr>
             <td><strong>Primary Use Case</strong></td>
             <td>LLM Development</td>
+            <td class="highlight">Agentic AI Laptops</td>
             <td>Robotics & Edge AI</td>
             <td>General AI / Gaming</td>
+        </tr>
+        <tr>
+            <td><strong>Availability</strong></td>
+            <td>Available Now (2025)</td>
+            <td style="background: #fff3cd;">Q4 2026</td>
+            <td>Available Now (2025)</td>
+            <td>Available Now (2025)</td>
         </tr>
     </tbody>
 </table>
@@ -520,6 +565,231 @@
 <div class="callout">
     <h4>💡 Best Value Pick: ASUS Ascent GX10</h4>
     <p>The Ascent GX10 offers identical GB10 performance to the DGX Spark Founders Edition at a lower price point with 1TB storage. The only trade-off is less storage (1TB vs 4TB), which is easily upgradeable.</p>
+</div>
+
+<h2>NVIDIA RTX Spark: Agentic AI for Laptops and Consumer PCs</h2>
+
+<p>Announced at Computex 2026, RTX Spark brings Grace Blackwell architecture to consumer Windows-on-Arm laptops and compact desktops. Unlike the Linux-only DGX Spark, RTX Spark targets mainstream users with <strong>local agentic AI capabilities</strong>, enabling 120B-parameter LLMs with up to 1 million token context windows—all running locally without cloud dependence.</p>
+
+<h3>N1 and N1X Variants</h3>
+<p>RTX Spark ships in multiple SKU tiers targeting different price points and performance needs:</p>
+
+<div class="card-grid">
+    <div class="card">
+        <h4>💎 N1X (Premium)</h4>
+        <ul>
+            <li>20 CPU cores (10×Cortex-X925 + 10×A725)</li>
+            <li>6,144 CUDA cores (Blackwell GPU)</li>
+            <li>120 TOPS Reasoning Acceleration Unit</li>
+            <li>Up to 128GB LPDDR5X</li>
+            <li>600 GB/s NVLink bandwidth</li>
+            <li>GPU perf: RTX 4070-5070 laptop equivalent</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>⚡ N1X (Mid-tier)</h4>
+        <ul>
+            <li>18 CPU cores</li>
+            <li>5,120 CUDA cores</li>
+            <li>Same 120 TOPS RAU</li>
+            <li>Up to 128GB LPDDR5X</li>
+            <li>Slightly lower GPU performance</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>💰 N1 (Entry)</h4>
+        <ul>
+            <li>10-12 CPU cores</li>
+            <li>2,048-2,560 CUDA cores</li>
+            <li>Lower TOPS (exact spec TBA)</li>
+            <li>Budget-friendly option</li>
+            <li>Still runs local agents</li>
+        </ul>
+    </div>
+</div>
+
+<h3>Benchmark Results: N1X Performance</h3>
+<p>Early benchmarks from pre-release units reveal competitive performance, though the N1X trails Apple's M5 Max in CPU-bound tasks:</p>
+
+<table class="comparison-table">
+    <thead>
+        <tr>
+            <th>Benchmark</th>
+            <th>NVIDIA N1X</th>
+            <th>Apple M5 Max</th>
+            <th>Intel Ultra 9 290HX Plus</th>
+            <th>AMD Medusa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Geekbench 6.2 Single-Core</strong></td>
+            <td>3,096</td>
+            <td class="highlight">~4,200 (33% faster)</td>
+            <td>~3,100</td>
+            <td>~2,950</td>
+        </tr>
+        <tr>
+            <td><strong>Geekbench 6.2 Multi-Core</strong></td>
+            <td>18,837</td>
+            <td class="highlight">~25,000 (33% faster)</td>
+            <td>~19,000</td>
+            <td>~17,500</td>
+        </tr>
+        <tr>
+            <td><strong>AI TOPS (Neural Engine)</strong></td>
+            <td class="highlight">120 TOPS @ 15W</td>
+            <td>~85 TOPS</td>
+            <td>~95 TOPS</td>
+            <td>105 TOPS</td>
+        </tr>
+        <tr>
+            <td><strong>GPU Compute (estimated)</strong></td>
+            <td class="highlight">RTX 4070-5070 laptop class</td>
+            <td>M5 Max (40 GPU cores)</td>
+            <td>Arc B140 (integrated)</td>
+            <td>Radeon 890M</td>
+        </tr>
+        <tr>
+            <td><strong>Gaming (1440p, est.)</strong></td>
+            <td class="highlight">100+ FPS (w/ DLSS 4.5)</td>
+            <td>Native perf lower, no DLSS</td>
+            <td>60-80 FPS</td>
+            <td>70-90 FPS</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Agentic AI Capabilities</h3>
+<div class="callout">
+    <h4>🤖 What Makes RTX Spark "Agentic"?</h4>
+    <p>The <strong>Reasoning Acceleration Unit (RAU)</strong> is a dedicated accelerator optimized for multi-step reasoning workflows—enabling local AI agents to plan, execute, and iterate without cloud API calls. Combined with 128GB unified memory, the N1X can:</p>
+    <ul style="margin: 10px 0; padding-left: 20px;">
+        <li>Run 70B parameter models at interactive speeds (claimed by NVIDIA)</li>
+        <li>Load 120B models with extended context (up to 1M tokens using agent-based retrieval)</li>
+        <li>Execute multi-agent workflows locally (planning, coding, research agents in parallel)</li>
+        <li>Process "chain-of-thought" reasoning tasks 3-5× faster than NPU-only systems</li>
+    </ul>
+</div>
+
+<h3>RTX Spark vs DGX Spark: Key Differences</h3>
+<table class="comparison-table">
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>DGX Spark (Desktop)</th>
+            <th>RTX Spark N1X (Laptop)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Form Factor</strong></td>
+            <td>150×150×50mm mini desktop</td>
+            <td class="highlight">13-17" laptop (portable)</td>
+        </tr>
+        <tr>
+            <td><strong>Operating System</strong></td>
+            <td>DGX OS (Ubuntu-based, Linux only)</td>
+            <td class="highlight">Windows 11 on Arm</td>
+        </tr>
+        <tr>
+            <td><strong>Target Audience</strong></td>
+            <td>AI researchers, LLM developers</td>
+            <td class="highlight">Consumers, prosumers, developers</td>
+        </tr>
+        <tr>
+            <td><strong>AI TOPS</strong></td>
+            <td class="highlight">1,000 TOPS (FP4, full SoC)</td>
+            <td>120 TOPS (RAU @ 15W)</td>
+        </tr>
+        <tr>
+            <td><strong>Memory Bandwidth</strong></td>
+            <td>273 GB/s</td>
+            <td class="highlight">600 GB/s (NVLink)</td>
+        </tr>
+        <tr>
+            <td><strong>Power Consumption</strong></td>
+            <td>~170W (desktop TDP)</td>
+            <td class="highlight">15-45W (battery efficient)</td>
+        </tr>
+        <tr>
+            <td><strong>CUDA Ecosystem</strong></td>
+            <td class="highlight">Full CUDA, NGC, TensorRT-LLM</td>
+            <td>CUDA support (Windows Arm constraints)</td>
+        </tr>
+        <tr>
+            <td><strong>Gaming</strong></td>
+            <td>Limited (not the focus)</td>
+            <td class="highlight">100 FPS 1440p (DLSS 4.5)</td>
+        </tr>
+        <tr>
+            <td><strong>Pricing</strong></td>
+            <td>Premium (Founders Edition)</td>
+            <td class="highlight">Consumer-friendly (TBA)</td>
+        </tr>
+        <tr>
+            <td><strong>Availability</strong></td>
+            <td>Available now (Oct 2025)</td>
+            <td style="background: #fff3cd;">Q4 2026</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="pros-cons">
+    <div class="pros">
+        <h4>✅ RTX Spark Pros</h4>
+        <ul>
+            <li>True laptop mobility (13-17" form factors)</li>
+            <li>Windows 11 compatibility (broader software ecosystem)</li>
+            <li>600 GB/s NVLink bandwidth (2× DGX Spark)</li>
+            <li>Gaming-capable (100 FPS 1440p with DLSS 4.5)</li>
+            <li>120 TOPS dedicated reasoning accelerator</li>
+            <li>Battery-efficient (15-45W vs 170W desktop)</li>
+            <li>Consumer-friendly pricing expected</li>
+            <li>OEM diversity (Asus, Dell, HP, Lenovo, Microsoft)</li>
+        </ul>
+    </div>
+    <div class="cons">
+        <h4>❌ RTX Spark Cons</h4>
+        <ul>
+            <li>Lower overall AI TOPS (120 vs 1,000 for DGX)</li>
+            <li>Windows Arm ecosystem still maturing</li>
+            <li>Not shipping until Q4 2026</li>
+            <li>CPU trails Apple M5 Max by ~33%</li>
+            <li>CUDA on Windows Arm has limitations</li>
+            <li>May not match DGX for pure LLM training</li>
+            <li>Soldered memory (no upgrades post-purchase)</li>
+        </ul>
+    </div>
+</div>
+
+<h3>OEM Partners and Expected Models</h3>
+<div class="oem-grid">
+    <div class="oem-card">
+        <div class="brand">Microsoft</div>
+        <div class="model">Surface Laptop Ultra</div>
+        <div class="price">Premium (Q4 2026)</div>
+    </div>
+    <div class="oem-card">
+        <div class="brand">ASUS</div>
+        <div class="model">ProArt Studiobook AI</div>
+        <div class="price">Expected Q4 2026</div>
+    </div>
+    <div class="oem-card">
+        <div class="brand">Dell</div>
+        <div class="model">XPS 15/17 RTX Spark</div>
+        <div class="price">Expected Q4 2026</div>
+    </div>
+    <div class="oem-card">
+        <div class="brand">HP</div>
+        <div class="model">ZBook Studio G12</div>
+        <div class="price">Expected Q4 2026</div>
+    </div>
+    <div class="oem-card">
+        <div class="brand">Lenovo</div>
+        <div class="model">ThinkPad P1 Gen 8</div>
+        <div class="price">Expected Q4 2026</div>
+    </div>
 </div>
 
 <h2>NVIDIA Jetson Thor: The Robotics Powerhouse</h2>
@@ -700,35 +970,58 @@
 
 <div class="use-case">
     <h4>🔬 Choose DGX Spark if:</h4>
-    <p>You're an AI researcher or enterprise developer who needs to run large language models (70B-200B parameters) locally, requires full CUDA ecosystem compatibility, values seamless cloud deployment paths, and prioritizes software maturity over raw price/performance. Ideal for: AI startups, research labs, enterprise AI teams.</p>
+    <p>You're an AI researcher or enterprise developer who needs to run large language models (70B-200B parameters) locally, requires full CUDA ecosystem compatibility, values seamless cloud deployment paths, and prioritizes software maturity over raw price/performance. <strong>Best for stationary desktop workloads with maximum AI compute.</strong> Ideal for: AI startups, research labs, enterprise AI teams, on-premise LLM development.</p>
+</div>
+
+<div class="use-case" style="background: #e3f2fd; border-left: 4px solid #1a5490;">
+    <h4>💼 Choose RTX Spark (N1/N1X) if:</h4>
+    <p>You need <strong>portable agentic AI</strong> in a laptop form factor, want Windows 11 compatibility with mainstream software ecosystem, require both AI development AND gaming/creative capabilities, and can wait until Q4 2026. The 120 TOPS RAU and 600 GB/s bandwidth make it the first true "AI laptop" for local agents. <strong>Best for mobile AI workflows.</strong> Ideal for: Digital nomads, consultants, prosumers, students, developers who travel, hybrid work environments, content creators needing AI + gaming.</p>
 </div>
 
 <div class="use-case">
     <h4>🤖 Choose Jetson Thor if:</h4>
-    <p>You're building robots, autonomous systems, or edge AI applications requiring real-time sensor fusion, multi-camera processing, and embedded deployment. The 2,070 TOPS and Isaac/GR00T ecosystem make it unmatched for physical AI. Ideal for: Robotics companies, autonomous vehicle developers, industrial automation.</p>
+    <p>You're building robots, autonomous systems, or edge AI applications requiring real-time sensor fusion, multi-camera processing, and embedded deployment. The 2,070 TOPS and Isaac/GR00T ecosystem make it unmatched for physical AI. <strong>Best for robotics and edge deployment.</strong> Ideal for: Robotics companies, autonomous vehicle developers, industrial automation, drone systems, physical AI research.</p>
 </div>
 
 <div class="use-case">
     <h4>💻 Choose Framework Desktop if:</h4>
-    <p>You want maximum memory capacity per dollar, need Windows compatibility, plan to use the system for both AI development and general computing/gaming, or are comfortable with AMD's ROCm ecosystem. Ideal for: Budget-conscious developers, indie AI hackers, students, multi-purpose workstations.</p>
+    <p>You want maximum memory capacity per dollar, need Windows compatibility, plan to use the system for both AI development and general computing/gaming, or are comfortable with AMD's ROCm ecosystem. <strong>Best for budget-conscious multi-purpose use.</strong> Ideal for: Budget-conscious developers, indie AI hackers, students, multi-purpose workstations, hobbyists exploring local LLMs.</p>
 </div>
 
 <h2>Final Verdict</h2>
 
 <div class="callout">
-    <h4>🏆 The Bottom Line</h4>
-    <p><strong>For pure AI development:</strong> DGX Spark or ASUS Ascent GX10 (more affordable OEM variant) deliver the best CUDA-native experience with proven software stack.</p>
-    <p><strong>For robotics:</strong> Jetson Thor is the clear winner—2x the compute, purpose-built I/O, and the Isaac ecosystem.</p>
-    <p><strong>For value seekers:</strong> Framework Desktop offers 128GB and multi-purpose capability at the most affordable price point—if you can live without CUDA.</p>
+    <h4>🏆 The Bottom Line (Updated July 2026)</h4>
+    <p><strong>For pure desktop AI development:</strong> DGX Spark or ASUS Ascent GX10 (more affordable OEM variant) deliver the best CUDA-native experience with proven software stack and maximum TOPS.</p>
+    <p><strong>For portable agentic AI (NEW):</strong> RTX Spark N1X is the game-changer—bringing 120B LLMs and local agents to a laptop. Wait for Q4 2026 if mobility matters. Early adopters should watch for Microsoft Surface Laptop Ultra or ASUS ProArt variants.</p>
+    <p><strong>For robotics:</strong> Jetson Thor remains unmatched—2,070 TOPS, purpose-built I/O, real-time sensor processing, and the Isaac/GR00T ecosystem.</p>
+    <p><strong>For value seekers:</strong> Framework Desktop offers 128GB and multi-purpose capability at the most affordable price point—if you can live without CUDA and prefer x86 compatibility.</p>
 </div>
 
-<p>The 2025 desktop AI landscape finally offers real choices. Whether you're building the next ChatGPT competitor, programming humanoid robots, or just want to run local LLMs without breaking the bank, there's now a platform designed for your specific needs.</p>
+<p>The 2025-2026 desktop and laptop AI landscape has evolved dramatically. Whether you're building the next ChatGPT competitor, programming humanoid robots, traveling with local AI agents, or just want to run LLMs without breaking the bank, there's now a platform designed for your specific needs—<strong>including true portable agentic AI for the first time</strong>.</p>
+
+<h2>References & Sources</h2>
+<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 25px 0;">
+    <h4 style="margin-bottom: 15px;">Research Sources (July 2026 Update):</h4>
+    <ul style="line-height: 1.8; font-size: 0.9rem;">
+        <li><a href="https://www.pcworld.com/article/3152460/nvidia-rtx-spark-chip-reinvents-laptops-for-agentic-ai.html" target="_blank">Nvidia's RTX Spark chip 'reinvents' laptops for agentic AI - PCWorld</a></li>
+        <li><a href="https://www.tomshardware.com/laptops/nvidia-unveils-rtx-spark-superchip-at-computex-2026-new-platform-promises-to-turn-windows-into-an-agentic-ai-os-with-arm-cpu-blackwell-gpu-and-128gb-unified-memory" target="_blank">Nvidia unveils RTX Spark Superchip at Computex 2026 - Tom's Hardware</a></li>
+        <li><a href="https://kingy.ai/news/nvidia-rtx-spark-laptops-the-complete-guide-to-nvidias-bid-to-reinvent-the-windows-pc/" target="_blank">NVIDIA RTX Spark Laptops: Complete Guide - Kingy.ai</a></li>
+        <li><a href="https://runaihome.com/blog/computex-2026-ai-hardware-roundup-home-lab-2026/" target="_blank">Computex 2026 AI Hardware Reality Check - RunAIHome</a></li>
+        <li><a href="https://bottleneckcalcs.com/blog/nvidia-n1x-rtx-spark-guide" target="_blank">Nvidia N1X (RTX Spark) Complete Guide - BottleneckCalcs</a></li>
+        <li><a href="https://lecompute.fr/en/silicon/rtx-spark-vs-dgx-spark/" target="_blank">RTX Spark vs DGX Spark: specs, memory, price - LeCompute</a></li>
+        <li><a href="https://acecloud.ai/blog/dgx-spark-vs-rtx-spark/" target="_blank">DGX Spark Vs RTX Spark: Which Should You Choose? - AceCloud</a></li>
+        <li><a href="https://www.notebookcheck.net/Nvidia-N1X-far-behind-Apple-M5-Max-comparable-chips-show-expected-performance.1313665.0.html" target="_blank">Nvidia N1X far behind Apple M5 Max benchmark comparison - Notebookcheck</a></li>
+        <li><a href="https://www.laptopmag.com/laptops/windows-laptops/nvidia-n1x-apu-benchmarks" target="_blank">Nvidia N1X Geekbench scores vs AMD and Intel - Laptop Mag</a></li>
+        <li><a href="https://www.igorslab.de/en/rtx-spark-nvidia-n1x-cinebench-leak-strong-single-core-weak-multi-core-results/" target="_blank">RTX Spark/NVIDIA N1X Cinebench leak - Igor's Lab</a></li>
+    </ul>
+</div>
 
 </article>
 </main>
 
 <footer style="background: var(--secondary); color: white; padding: 30px; text-align: center;">
-    <p>© 2025 | AI Hardware Analysis | Last Updated: December 2025</p>
+    <p>© 2025-2026 | AI Hardware Analysis | Last Updated: July 2026 with RTX Spark N1/N1X benchmarks</p>
     <p style="margin-top: 15px; font-size: 0.9rem;">
         Learn more about AI solutions and hardware at <a href="https://vikabot.com" style="color: var(--primary); text-decoration: none; font-weight: 600;" target="_blank">vikabot.com</a>
     </p>
