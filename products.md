@@ -81,6 +81,17 @@ permalink: /products/
                 </div>
             </div>
 
+            <div class="bg-gray-50 border border-gray-200 p-8 mb-16 text-center">
+                <h3 class="text-2xl font-bold mb-4">AI Embedded SW Dev Platform Comparison</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+                    In-depth comparison of NVIDIA DGX Spark, Jetson Thor, and Framework Desktop
+                    for AI development, robotics, and edge computing.
+                </p>
+                <a href="{{ '/ai-desktop-products.html' | relative_url }}" class="inline-block bg-black text-white px-8 py-3 font-medium hover:bg-gray-800 transition-colors">
+                    View Platform Comparison
+                </a>
+            </div>
+
             <h2 class="text-3xl font-bold mb-8 text-center">Additional Solutions</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white border border-gray-200 p-6 hover:shadow-lg transition-shadow">
