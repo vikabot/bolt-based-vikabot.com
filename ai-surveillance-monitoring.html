@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Surveillance Monitoring Use-Case: Industrial campus solutions for small-medium facilities with 50-100 cameras and radar integration. Edge AI hardware recommendations for factories, campuses, and gated communities.">
+    <meta name="keywords" content="AI surveillance monitoring, industrial surveillance, AI CCTV, edge AI, Rockchip RK3588, Hailo-8, Jetson Orin, radar integration, factory security, campus surveillance, alert notification">
+    <title>AI Surveillance Monitoring Use-Case | Smart Edge Devices | VikaBot</title>
+    <style>
+        :root {
+            --primary: #76b900;
+            --primary-dark: #5a9000;
+            --secondary: #1a1a2e;
+            --accent: #0f3460;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #ffffff;
+            --border: #e0e0e0;
+            --warning: #ff9800;
+            --info: #2196f3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Header */
+        header {
+            background: var(--secondary);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero .scope-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+        }
+
+        section h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        section h4 {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin: 1.2rem 0 0.8rem 0;
+        }
+
+        /* Use Case Profile */
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .use-case-card {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .use-case-card h4 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .use-case-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Architecture Block Diagram */
+        .arch-container {
+            background: linear-gradient(180deg, #f0f4f8 0%, #e8eef5 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .arch-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .arch-connector {
+            display: flex;
+            justify-content: center;
+            margin: 0.25rem 0;
+        }
+
+        .arch-connector .line {
+            width: 3px;
+            height: 15px;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--info) 100%);
+            border-radius: 2px;
+        }
+
+        .arch-connector .line-horizontal {
+            height: 3px;
+            width: 90%;
+            max-width: 700px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--info) 50%, var(--accent) 100%);
+            border-radius: 2px;
+        }
+
+        .arch-block {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: var(--white);
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            min-width: 100px;
+            max-width: 180px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .arch-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .arch-block.primary {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+        }
+
+        .arch-block.vms {
+            background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
+            min-width: 160px;
+        }
+
+        .arch-block.switch {
+            background: linear-gradient(135deg, #5e35b1 0%, #9575cd 100%);
+        }
+
+        .arch-block.edge {
+            background: linear-gradient(135deg, #e65100 0%, #ff9800 100%);
+        }
+
+        .arch-block.camera {
+            background: linear-gradient(135deg, #2e7d32 0%, #66bb6a 100%);
+            min-width: 70px;
+            padding: 0.4rem 0.5rem;
+        }
+
+        .arch-block.radar {
+            background: linear-gradient(135deg, #c62828 0%, #ef5350 100%);
+            min-width: 60px;
+            padding: 0.4rem 0.5rem;
+        }
+
+        .arch-block.storage {
+            background: linear-gradient(135deg, #00838f 0%, #4dd0e1 100%);
+        }
+
+        .arch-block .icon {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .arch-block .title {
+            font-weight: bold;
+            font-size: 0.7rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .arch-block .subtitle {
+            font-size: 0.6rem;
+            opacity: 0.9;
+        }
+
+        .arch-block .specs {
+            font-size: 0.55rem;
+            opacity: 0.85;
+            margin-top: 0.3rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 0.3rem;
+        }
+
+        .arch-zone-label {
+            background: rgba(0,0,0,0.08);
+            border-radius: 6px;
+            padding: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .arch-zone-label h4 {
+            color: var(--secondary);
+            margin: 0 0 0.4rem 0;
+            font-size: 0.75rem;
+        }
+
+        .arch-zone-label .zones {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.65rem;
+            color: var(--text-light);
+        }
+
+        .arch-zone-label .zone-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .arch-zone-label .zone-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .arch-zone-label .zone-dot.factory { background: #2e7d32; }
+        .arch-zone-label .zone-dot.perimeter { background: #43a047; }
+        .arch-zone-label .zone-dot.gate { background: #e65100; }
+        .arch-zone-label .zone-dot.radar { background: #c62828; }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:hover {
+            background: var(--bg);
+        }
+
+        .tier-entry {
+            background: #e8f5e9;
+        }
+
+        .tier-mid {
+            background: #fff3e0;
+        }
+
+        .tier-premium {
+            background: #e3f2fd;
+        }
+
+        /* Hardware Cards */
+        .hardware-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .hardware-card {
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hardware-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hardware-card-header {
+            padding: 1.5rem;
+            color: var(--white);
+        }
+
+        .hardware-card-header.entry {
+            background: linear-gradient(135deg, #43a047 0%, #66bb6a 100%);
+        }
+
+        .hardware-card-header.mid {
+            background: linear-gradient(135deg, #f57c00 0%, #ffb74d 100%);
+        }
+
+        .hardware-card-header.premium {
+            background: linear-gradient(135deg, #1976d2 0%, #64b5f6 100%);
+        }
+
+        .hardware-card-header h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .hardware-card-header .tier-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .hardware-card-body {
+            padding: 1.5rem;
+        }
+
+        .hardware-card-body ul {
+            list-style: none;
+        }
+
+        .hardware-card-body li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hardware-card-body li:last-child {
+            border-bottom: none;
+        }
+
+        .hardware-card-body .label {
+            color: var(--text-light);
+        }
+
+        .hardware-card-body .value {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .hardware-card-footer {
+            padding: 1rem 1.5rem;
+            background: var(--bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+        .best-for {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Radar Section */
+        .radar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .radar-card {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-top: 4px solid var(--info);
+        }
+
+        .radar-card h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .radar-card .specs {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .radar-card .specs p {
+            margin: 0.25rem 0;
+        }
+
+        /* Software Stack */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .software-item {
+            background: var(--bg);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .software-item .component {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .software-item .options {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        /* Calculation Boxes */
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .calc-box {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--info);
+        }
+
+        .calc-box h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .calc-box .formula {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            margin: 0.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        .calc-box .example {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .calc-box table {
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .calc-box th, .calc-box td {
+            padding: 0.5rem;
+        }
+
+        /* Callout Box */
+        .callout {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .callout.info {
+            background: #e3f2fd;
+            border-left: 4px solid var(--info);
+        }
+
+        .callout.success {
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary);
+        }
+
+        .callout.warning {
+            background: #fff3e0;
+            border-left: 4px solid var(--warning);
+        }
+
+        .callout h4 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        /* BOM Table */
+        .bom-section {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .bom-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .bom-total {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+
+        /* Detailed Architecture */
+        .detail-section {
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .detail-header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1.5rem;
+        }
+
+        .detail-header h3 {
+            color: var(--white);
+            margin: 0;
+        }
+
+        .detail-header p {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .detail-body {
+            padding: 2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            border-bottom: none;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-dark);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .architecture-diagram {
+                font-size: 0.65rem;
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            th, td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="https://www.vikabot.com" class="logo">Vika<span>Bot</span></a>
+            <nav>
+                <a href="https://www.vikabot.com#home">Home</a>
+                <a href="https://www.vikabot.com#products">Products</a>
+                <a href="https://www.vikabot.com#services">Services</a>
+                <a href="https://www.vikabot.com#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="https://www.vikabot.com">Home</a> &raquo;
+            <a href="https://www.vikabot.com#products">Products</a> &raquo;
+            <a href="#">Smart Edge Devices</a> &raquo;
+            <span>AI Surveillance Monitoring Use-Case</span>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Industrial Campus <span>AI Surveillance</span></h1>
+        <p>Multi-sensor perimeter security for small-medium factories, campuses, and gated communities.
+           Scalable edge AI solutions combining cameras with radar integration at vehicle entrances.</p>
+        <div class="scope-badge">PoC Scope: 50–100 Cameras + Vehicle Entrance Radars</div>
+    </section>
+
+    <div class="container">
+        <!-- Use Case Profile -->
+        <section>
+            <h2>Use Case Profile</h2>
+            <p>AI-powered surveillance for small-medium industrial facilities and gated communities.
+               This guide covers deployments with 50–100 cameras and radar sensors at truck/car entrances.</p>
+
+            <div class="use-case-grid">
+                <div class="use-case-card">
+                    <h4>📹 Scale</h4>
+                    <p>50–100 IP cameras with centralized or distributed edge processing</p>
+                </div>
+                <div class="use-case-card">
+                    <h4>🏭 Environment</h4>
+                    <p>Factory floor, perimeter fence, loading docks, vehicle entry/exit gates</p>
+                </div>
+                <div class="use-case-card">
+                    <h4>🧠 Analytics</h4>
+                    <p>Intrusion detection, LPR, PPE compliance, vehicle tracking, behavior analysis</p>
+                </div>
+                <div class="use-case-card">
+                    <h4>📡 Radar</h4>
+                    <p>2–4 units at truck/car entrances for vehicle detection and speed monitoring</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Power & Network Calculations -->
+        <section>
+            <h2>Infrastructure Planning</h2>
+            <p>Calculate power and network switch requirements before hardware selection.</p>
+
+            <div class="calc-grid">
+                <div class="calc-box">
+                    <h4>⚡ Power Calculation</h4>
+                    <div class="formula">
+Total PoE Power = Cameras × Avg Power per Camera
++ Edge Nodes × Node Power
++ Switches × Switch Power
++ Radar × Radar Power
++ 20% Headroom
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Component</th><th>Typical Power</th><th>×50 Cams</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>PoE Camera (4K)</td><td>12–25W each</td><td>600–1,250W</td></tr>
+                                <tr><td>PoE Camera (1080p)</td><td>8–15W each</td><td>400–750W</td></tr>
+                                <tr><td>Edge Node (RK3588+Hailo)</td><td>25W each</td><td>50W (×2)</td></tr>
+                                <tr><td>Edge Node (QCS8550)</td><td>40W each</td><td>40W (×1)</td></tr>
+                                <tr><td>PoE Switch (24-port)</td><td>30W + PoE budget</td><td>60W (×2)</td></tr>
+                                <tr><td>Radar Sensor</td><td>10–20W each</td><td>40W (×2)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="example">
+                        <strong>Example (50 cams @ 1080p):</strong><br>
+                        Cameras: 50 × 12W = 600W<br>
+                        Edge nodes: 2 × 25W = 50W<br>
+                        Switches: 2 × 30W = 60W<br>
+                        Radars: 2 × 15W = 30W<br>
+                        Subtotal: 740W + 20% = <strong>~900W total</strong>
+                    </div>
+                </div>
+
+                <div class="calc-box">
+                    <h4>🔌 Network Switch Planning</h4>
+                    <div class="formula">
+PoE Budget per Switch = Cameras × Max Camera Power
+Switches Needed = Total Cameras ÷ Ports per Switch
+Uplink = 10GbE to core (recommended)
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Cameras</th><th>Switch Config</th><th>PoE Budget</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>25</td><td>1× 24-port PoE+</td><td>370W</td></tr>
+                                <tr><td>50</td><td>2× 24-port PoE+</td><td>740W</td></tr>
+                                <tr><td>75</td><td>3× 24-port PoE+ or 2× 48-port</td><td>1,110W</td></tr>
+                                <tr><td>100</td><td>2× 48-port PoE++ or 4× 24-port</td><td>1,480W</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="example">
+                        <strong>Recommended Switches:</strong><br>
+                        Entry: TP-Link TL-SG1024PE (24-port, 250W)<br>
+                        Mid: Ubiquiti USW-Pro-24-PoE (400W)<br>
+                        Premium: Cisco CBS350-24FP (370W)
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout info">
+                <h4>💡 Storage Calculation</h4>
+                <p><strong>Formula:</strong> Cameras × Bitrate (Mbps) × 3600 × 24 × Days ÷ 8 ÷ 1,000,000 = TB<br>
+                   <strong>Example (50 cams, 4 Mbps, 30 days):</strong> 50 × 4 × 3600 × 24 × 30 ÷ 8 ÷ 1,000,000 = <strong>~65 TB</strong><br>
+                   <em>With smart recording (motion only), reduce by 50–70% → ~20–30 TB</em></p>
+            </div>
+        </section>
+
+        <!-- Hardware Tiers -->
+        <section>
+            <h2>Hardware Recommendations</h2>
+            <p>Three tiers optimized for different deployment requirements and budget constraints.
+               All platforms support ONVIF cameras and standard VMS integration.</p>
+
+            <div class="hardware-grid">
+                <!-- Entry Tier -->
+                <div class="hardware-card">
+                    <div class="hardware-card-header entry">
+                        <h4>RK3588 + Hailo-8</h4>
+                        <span class="tier-label">ENTRY TIER</span>
+                    </div>
+                    <div class="hardware-card-body">
+                        <ul>
+                            <li><span class="label">AI Performance</span><span class="value">32 TOPS (6+26)</span></li>
+                            <li><span class="label">Camera Channels</span><span class="value">24–32 @ 1080p</span></li>
+                            <li><span class="label">Power Draw</span><span class="value">15–25W</span></li>
+                            <li><span class="label">CPU</span><span class="value">8-core ARM A76/A55</span></li>
+                            <li><span class="label">Video Decode</span><span class="value">8K60 / 32× 1080p</span></li>
+                            <li><span class="label">Network</span><span class="value">Dual GbE</span></li>
+                        </ul>
+                    </div>
+                    <div class="hardware-card-footer">
+                        <span class="price-tag">$800–1,200</span>
+                        <span class="best-for">Best for: Cost-sensitive</span>
+                    </div>
+                </div>
+
+                <!-- Mid Tier -->
+                <div class="hardware-card">
+                    <div class="hardware-card-header mid">
+                        <h4>Qualcomm QCS8550</h4>
+                        <span class="tier-label">MID TIER</span>
+                    </div>
+                    <div class="hardware-card-body">
+                        <ul>
+                            <li><span class="label">AI Performance</span><span class="value">48 TOPS</span></li>
+                            <li><span class="label">Camera Channels</span><span class="value">48–64 @ 1080p</span></li>
+                            <li><span class="label">Power Draw</span><span class="value">25–40W</span></li>
+                            <li><span class="label">CPU</span><span class="value">8-core Kryo</span></li>
+                            <li><span class="label">Video Decode</span><span class="value">8K30 / 64× 1080p</span></li>
+                            <li><span class="label">Network</span><span class="value">2.5GbE / 10GbE opt</span></li>
+                        </ul>
+                    </div>
+                    <div class="hardware-card-footer">
+                        <span class="price-tag">$1,500–2,500</span>
+                        <span class="best-for">Best for: Balanced</span>
+                    </div>
+                </div>
+
+                <!-- Premium Tier -->
+                <div class="hardware-card">
+                    <div class="hardware-card-header premium">
+                        <h4>NVIDIA Jetson Orin NX</h4>
+                        <span class="tier-label">PREMIUM TIER</span>
+                    </div>
+                    <div class="hardware-card-body">
+                        <ul>
+                            <li><span class="label">AI Performance</span><span class="value">100 TOPS</span></li>
+                            <li><span class="label">Camera Channels</span><span class="value">16–32 @ 4K</span></li>
+                            <li><span class="label">Power Draw</span><span class="value">25–60W</span></li>
+                            <li><span class="label">GPU</span><span class="value">1024 CUDA cores</span></li>
+                            <li><span class="label">Special</span><span class="value">Radar/LiDAR fusion</span></li>
+                            <li><span class="label">Network</span><span class="value">GbE + 10GbE opt</span></li>
+                        </ul>
+                    </div>
+                    <div class="hardware-card-footer">
+                        <span class="price-tag">$2,000–3,500</span>
+                        <span class="best-for">Best for: Sensor fusion</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VENDOR OPTIONS - Hidden for public website
+            <h3>Vendor Options</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Platform</th>
+                            <th>Vendors</th>
+                            <th>Form Factor</th>
+                            <th>Power</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tier-entry">
+                            <td>Entry</td>
+                            <td>RK3588 + Hailo-8</td>
+                            <td>Geniatech, Forlinx, SeeedStudio</td>
+                            <td>Fanless box / DIN rail</td>
+                            <td>25W</td>
+                        </tr>
+                        <tr class="tier-entry">
+                            <td>Entry</td>
+                            <td>RK3588 standalone</td>
+                            <td>Firefly, Orange Pi, Radxa</td>
+                            <td>SBC / Mini PC</td>
+                            <td>15W</td>
+                        </tr>
+                        <tr class="tier-mid">
+                            <td>Mid</td>
+                            <td>QCS8550</td>
+                            <td>Firefly, Advantech (Dragonwing)</td>
+                            <td>AI NVR / Edge server</td>
+                            <td>40W</td>
+                        </tr>
+                        <tr class="tier-mid">
+                            <td>Mid</td>
+                            <td>QCS6490</td>
+                            <td>VVDN, Lantronix</td>
+                            <td>Compact edge box</td>
+                            <td>15W</td>
+                        </tr>
+                        <tr class="tier-premium">
+                            <td>Premium</td>
+                            <td>Jetson Orin NX</td>
+                            <td>Axiomtek, AAEON, Advantech</td>
+                            <td>Rugged industrial</td>
+                            <td>35W</td>
+                        </tr>
+                        <tr class="tier-premium">
+                            <td>Premium</td>
+                            <td>Jetson AGX Orin</td>
+                            <td>Vecow, Connect Tech</td>
+                            <td>High-performance box</td>
+                            <td>60W</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            END VENDOR OPTIONS -->
+        </section>
+
+        <!-- Detailed Mid-Range Architecture -->
+        <section>
+            <h2>Detailed Reference Design</h2>
+            <p>Complete architecture for a mid-range deployment: 50 cameras + 2 radars at vehicle entrances.</p>
+
+            <div class="detail-section">
+                <div class="detail-header">
+                    <h3>📐 Mid-Range Design: 50 Cameras + 2 Radars</h3>
+                    <p>Typical small factory or gated community with single entry/exit point</p>
+                </div>
+                <div class="detail-body">
+                    <!-- Architecture Diagram -->
+                    <h4>System Architecture</h4>
+                    <div class="arch-container">
+                        <!-- VMS Command Center -->
+                        <div class="arch-row">
+                            <div class="arch-block vms">
+                                <div class="icon">🖥️</div>
+                                <div class="title">VMS Command Center</div>
+                                <div class="subtitle">Network Optix Nx Witness / Frigate NVR</div>
+                                <div class="specs">Intel N100/N200 Mini PC • 4TB NVMe • Central Monitoring</div>
+                            </div>
+                            <div class="arch-block storage">
+                                <div class="icon">💾</div>
+                                <div class="title">NAS Storage</div>
+                                <div class="subtitle">4-Bay NAS Array</div>
+                                <div class="specs">32TB Raw • RAID5 • 30-Day Retention</div>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="arch-connector">
+                            <div class="line"></div>
+                        </div>
+                        <div style="text-align: center; font-size: 0.65rem; color: var(--info); font-weight: 600;">10GbE Uplink</div>
+                        <div class="arch-connector">
+                            <div class="line"></div>
+                        </div>
+
+                        <!-- Core Switch -->
+                        <div class="arch-row">
+                            <div class="arch-block switch" style="min-width: 220px; max-width: 280px;">
+                                <div class="icon">🔀</div>
+                                <div class="title">Core Switch (L3)</div>
+                                <div class="subtitle">24-Port + 4× SFP+</div>
+                                <div class="specs">VLAN: Cams | Edge | Mgmt | Radar</div>
+                            </div>
+                        </div>
+
+                        <!-- Connector Split -->
+                        <div class="arch-connector">
+                            <div class="line"></div>
+                        </div>
+                        <div class="arch-connector">
+                            <div class="line-horizontal"></div>
+                        </div>
+
+                        <!-- Middle Layer: Switches and Edge Nodes on single line -->
+                        <div class="arch-row" style="flex-wrap: nowrap; gap: 0.4rem;">
+                            <div class="arch-block switch" style="min-width: 90px;">
+                                <div class="icon">🔌</div>
+                                <div class="title">PoE Switch 1</div>
+                                <div class="subtitle">24-Port 370W</div>
+                                <div class="specs">Cams 1–24</div>
+                            </div>
+                            <div class="arch-block switch" style="min-width: 90px;">
+                                <div class="icon">🔌</div>
+                                <div class="title">PoE Switch 2</div>
+                                <div class="subtitle">24-Port 370W</div>
+                                <div class="specs">Cams 25–50</div>
+                            </div>
+                            <div class="arch-block edge" style="min-width: 95px;">
+                                <div class="icon">🧠</div>
+                                <div class="title">Edge Node 1</div>
+                                <div class="subtitle">RK3588+Hailo</div>
+                                <div class="specs">25W • Cams 1–25 + Radar 1</div>
+                            </div>
+                            <div class="arch-block edge" style="min-width: 95px;">
+                                <div class="icon">🧠</div>
+                                <div class="title">Edge Node 2</div>
+                                <div class="subtitle">RK3588+Hailo</div>
+                                <div class="specs">25W • Cams 26–50 + Radar 2</div>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="arch-connector">
+                            <div class="line-horizontal"></div>
+                        </div>
+
+                        <!-- Bottom Layer: Cameras and Radars -->
+                        <div class="arch-row">
+                            <div class="arch-block camera">
+                                <div class="icon">📹</div>
+                                <div class="title">Zone A</div>
+                                <div class="subtitle">16 Cameras</div>
+                                <div class="specs">Factory Floor</div>
+                            </div>
+                            <div class="arch-block camera">
+                                <div class="icon">📹</div>
+                                <div class="title">Zone B</div>
+                                <div class="subtitle">8 Cameras</div>
+                                <div class="specs">Perimeter</div>
+                            </div>
+                            <div class="arch-block radar">
+                                <div class="icon">📡</div>
+                                <div class="title">Radar 1</div>
+                                <div class="subtitle">Entry Gate</div>
+                                <div class="specs">77GHz</div>
+                            </div>
+                            <div class="arch-block camera">
+                                <div class="icon">📹</div>
+                                <div class="title">Zone C</div>
+                                <div class="subtitle">16 Cameras</div>
+                                <div class="specs">Perimeter</div>
+                            </div>
+                            <div class="arch-block camera" style="background: linear-gradient(135deg, #e65100 0%, #ff9800 100%);">
+                                <div class="icon">🚗</div>
+                                <div class="title">Gate</div>
+                                <div class="subtitle">10 LPR Cams</div>
+                                <div class="specs">4K + WDR</div>
+                            </div>
+                            <div class="arch-block radar">
+                                <div class="icon">📡</div>
+                                <div class="title">Radar 2</div>
+                                <div class="subtitle">Exit Gate</div>
+                                <div class="specs">77GHz</div>
+                            </div>
+                        </div>
+
+                        <!-- Zone Legend -->
+                        <div class="arch-zone-label">
+                            <h4>Zone Analytics</h4>
+                            <div class="zones">
+                                <div class="zone-item">
+                                    <div class="zone-dot factory"></div>
+                                    <span><strong>Zone A:</strong> PPE detection, forklift safety, worker counting</span>
+                                </div>
+                                <div class="zone-item">
+                                    <div class="zone-dot perimeter"></div>
+                                    <span><strong>Zone B+C:</strong> Intrusion detection, loitering, fence monitoring</span>
+                                </div>
+                                <div class="zone-item">
+                                    <div class="zone-dot gate"></div>
+                                    <span><strong>Gate:</strong> LPR, vehicle tracking, access logging</span>
+                                </div>
+                                <div class="zone-item">
+                                    <div class="zone-dot radar"></div>
+                                    <span><strong>Radar:</strong> Vehicle detection, speed, queue length</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Component Specifications -->
+                    <h4>Component Specifications</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Specification</th>
+                                    <th>Qty</th>
+                                    <th>Power</th>
+                                    <th>Network</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>IP Cameras (1080p)</strong></td>
+                                    <td>4MP turret/bullet, PoE, IR 30m, ONVIF</td>
+                                    <td>40</td>
+                                    <td>12W each = 480W</td>
+                                    <td>100Mbps each</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>IP Cameras (4K LPR)</strong></td>
+                                    <td>8MP bullet, motorized zoom, WDR</td>
+                                    <td>10</td>
+                                    <td>18W each = 180W</td>
+                                    <td>100Mbps each</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Edge Node</strong></td>
+                                    <td>RK3588 + Hailo-8 M.2 (32 TOPS)</td>
+                                    <td>2</td>
+                                    <td>25W each = 50W</td>
+                                    <td>2× GbE each</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>PoE Switch</strong></td>
+                                    <td>24-port PoE+ (370W budget), 2× SFP+</td>
+                                    <td>2</td>
+                                    <td>30W each = 60W</td>
+                                    <td>10GbE uplink</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Core Switch</strong></td>
+                                    <td>L3 managed, 24-port GbE + 4× SFP+</td>
+                                    <td>1</td>
+                                    <td>35W</td>
+                                    <td>10GbE backbone</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>VMS Server</strong></td>
+                                    <td>Intel N200 Mini PC, 32GB RAM, 4TB NVMe</td>
+                                    <td>1</td>
+                                    <td>25W</td>
+                                    <td>2.5GbE</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>NAS Storage</strong></td>
+                                    <td>4-bay NAS, 4× 8TB HDD (32TB raw)</td>
+                                    <td>1</td>
+                                    <td>50W</td>
+                                    <td>2× GbE</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Radar Sensor</strong></td>
+                                    <td>77GHz digital imaging, 150m range</td>
+                                    <td>2</td>
+                                    <td>15W each = 30W</td>
+                                    <td>Ethernet / CAN</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>UPS</strong></td>
+                                    <td>1500VA / 900W, 30min runtime</td>
+                                    <td>1</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Power Summary -->
+                    <h4>Power Budget Summary</h4>
+                    <div class="calc-box" style="margin-top: 1rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Component</th><th>Power (W)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>40× 1080p Cameras (PoE)</td><td>480W</td></tr>
+                                <tr><td>10× 4K LPR Cameras (PoE)</td><td>180W</td></tr>
+                                <tr><td>2× Edge Nodes</td><td>50W</td></tr>
+                                <tr><td>2× PoE Switches (base)</td><td>60W</td></tr>
+                                <tr><td>1× Core Switch</td><td>35W</td></tr>
+                                <tr><td>1× VMS Server</td><td>25W</td></tr>
+                                <tr><td>1× NAS Storage</td><td>50W</td></tr>
+                                <tr><td>2× Radar Sensors</td><td>30W</td></tr>
+                                <tr style="font-weight: bold; background: #e8f5e9;"><td>Subtotal</td><td>910W</td></tr>
+                                <tr style="font-weight: bold; background: #fff3e0;"><td>+ 20% Headroom</td><td>182W</td></tr>
+                                <tr style="font-weight: bold; background: var(--primary); color: white;"><td>TOTAL POWER</td><td>~1,100W</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="example" style="margin-top: 1rem;">
+                            <strong>UPS Recommendation:</strong> 1500VA / 900W minimum for 30-min runtime on core equipment (switches + edge nodes + VMS)
+                        </div>
+                    </div>
+
+                    <!-- Network Summary -->
+                    <h4>Network Requirements</h4>
+                    <div class="calc-box" style="margin-top: 1rem;">
+                        <table>
+                            <thead>
+                                <tr><th>Segment</th><th>Bandwidth</th><th>Notes</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Camera → PoE Switch</td><td>50× 4Mbps = 200 Mbps</td><td>Per switch: 100 Mbps</td></tr>
+                                <tr><td>PoE Switch → Edge Node</td><td>2× 100 Mbps</td><td>Processed video streams</td></tr>
+                                <tr><td>Edge Node → VMS</td><td>2× 50 Mbps</td><td>Metadata + alerts + selective video</td></tr>
+                                <tr><td>VMS → NAS</td><td>200 Mbps sustained</td><td>Recording streams</td></tr>
+                                <tr><td>Core Uplinks</td><td>10GbE recommended</td><td>Future-proof, burst capacity</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="example" style="margin-top: 1rem;">
+                            <strong>VLAN Configuration:</strong><br>
+                            VLAN 10: Camera network (isolated)<br>
+                            VLAN 20: Edge nodes + VMS<br>
+                            VLAN 30: Management (switches, IPMI)<br>
+                            VLAN 40: Radar sensors
+                        </div>
+                    </div>
+
+                    <!-- BOM -->
+                    <h4>Bill of Materials (Estimated)</h4>
+                    <div class="bom-section">
+                        <table>
+                            <thead>
+                                <tr><th>Item</th><th>Qty</th><th>Unit Price</th><th>Total</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>4MP PoE Turret Camera</td><td>40</td><td>$80</td><td>$3,200</td></tr>
+                                <tr><td>8MP LPR Bullet Camera</td><td>10</td><td>$200</td><td>$2,000</td></tr>
+                                <tr><td>RK3588 + Hailo-8 Edge Box</td><td>2</td><td>$1,000</td><td>$2,000</td></tr>
+                                <tr><td>24-Port PoE+ Switch (370W)</td><td>2</td><td>$350</td><td>$700</td></tr>
+                                <tr><td>L3 Core Switch (24-port)</td><td>1</td><td>$500</td><td>$500</td></tr>
+                                <tr><td>Intel N200 Mini PC (VMS)</td><td>1</td><td>$400</td><td>$400</td></tr>
+                                <tr><td>4-Bay NAS + 32TB HDD</td><td>1</td><td>$1,200</td><td>$1,200</td></tr>
+                                <tr><td>77GHz Digital Imaging Radar</td><td>2</td><td>$600</td><td>$1,200</td></tr>
+                                <tr><td>1500VA UPS</td><td>1</td><td>$300</td><td>$300</td></tr>
+                                <tr><td>Cabling + Accessories</td><td>1</td><td>$500</td><td>$500</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="bom-total">
+                            <span>ESTIMATED HARDWARE TOTAL</span>
+                            <span>$12,000 – $15,000</span>
+                        </div>
+                    </div>
+
+                    <div class="callout success" style="margin-top: 1.5rem;">
+                        <h4>✅ Why This Architecture Works</h4>
+                        <p><strong>Distributed Processing:</strong> Edge nodes handle AI inference locally, reducing central server load by 90%+.<br>
+                           <strong>Redundancy:</strong> Each edge node covers half the cameras; if one fails, the other continues.<br>
+                           <strong>Scalability:</strong> Add more edge nodes or upgrade to QCS8550 for 100+ cameras.<br>
+                           <strong>Radar Integration:</strong> Edge nodes receive radar data via Ethernet, fuse with camera feeds for vehicle tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Radar Integration -->
+        <section>
+            <h2>Radar Integration</h2>
+            <p>Complement camera coverage with radar sensors at vehicle entrances for all-weather detection
+               and velocity measurement. Essential for truck/car gate monitoring.</p>
+
+            <div class="radar-grid">
+                <div class="radar-card">
+                    <h4>📡 Digital Imaging Radar (Premium)</h4>
+                    <div class="specs">
+                        <p><strong>Type:</strong> 4D Digital Imaging Radar</p>
+                        <p><strong>Range:</strong> 150–350m</p>
+                        <p><strong>Resolution:</strong> &lt;1° angular</p>
+                        <p><strong>Interface:</strong> Ethernet / CAN</p>
+                        <p><strong>Use Case:</strong> Large vehicle tracking, classification</p>
+                        <p><strong>Power:</strong> 15–25W</p>
+                        <p><strong>Price Range:</strong> $1,500–2,500</p>
+                    </div>
+                </div>
+                <div class="radar-card">
+                    <h4>📡 Smartmicro (SMS) – Mid-Range</h4>
+                    <div class="specs">
+                        <p><strong>Type:</strong> 77GHz FMCW Radar</p>
+                        <p><strong>Range:</strong> 100–200m</p>
+                        <p><strong>Resolution:</strong> 1.5° angular</p>
+                        <p><strong>Interface:</strong> CAN / RS-485 / Ethernet</p>
+                        <p><strong>Use Case:</strong> Traffic monitoring, industrial</p>
+                        <p><strong>Power:</strong> 10–15W</p>
+                        <p><strong>Price Range:</strong> $800–1,500</p>
+                    </div>
+                </div>
+                <div class="radar-card">
+                    <h4>📡 India/Taiwan OEM – Entry</h4>
+                    <div class="specs">
+                        <p><strong>Examples:</strong> Steradian, waveant, local OEMs</p>
+                        <p><strong>Type:</strong> 77/79GHz mmWave</p>
+                        <p><strong>Range:</strong> 50–150m</p>
+                        <p><strong>Interface:</strong> UART / SPI / CAN</p>
+                        <p><strong>Use Case:</strong> Basic vehicle detection</p>
+                        <p><strong>Power:</strong> 5–10W</p>
+                        <p><strong>Price Range:</strong> $300–800</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout warning">
+                <h4>⚠️ Radar + Camera Fusion</h4>
+                <p>For true sensor fusion (combined tracking), use Jetson Orin with ROS2 or NVIDIA Isaac ROS.
+                   Entry/mid-tier platforms (RK3588, QCS8550) work best with radar as a <strong>separate alert trigger</strong>
+                   rather than fused tracking — the edge node receives radar events via MQTT/Ethernet and correlates with camera zones.</p>
+            </div>
+        </section>
+
+        <!-- Software Stack -->
+        <section>
+            <h2>Software Stack</h2>
+            <p>Recommended software components for edge analytics, VMS, and alerting.</p>
+
+            <div class="software-grid">
+                <div class="software-item">
+                    <span class="component">VMS</span>
+                    <span class="options">Nx Witness, Milestone, Frigate (OSS)</span>
+                </div>
+                <div class="software-item">
+                    <span class="component">Edge Analytics</span>
+                    <span class="options">DeepStream, Hailo Tappas, RKNN</span>
+                </div>
+                <div class="software-item">
+                    <span class="component">LPR Engine</span>
+                    <span class="options">OpenALPR, Plate Recognizer</span>
+                </div>
+                <div class="software-item">
+                    <span class="component">Alerting</span>
+                    <span class="options">MQTT, Telegram, PagerDuty</span>
+                </div>
+                <div class="software-item">
+                    <span class="component">Storage</span>
+                    <span class="options">MinIO, TrueNAS, Synology</span>
+                </div>
+                <div class="software-item">
+                    <span class="component">Radar Integration</span>
+                    <span class="options">MQTT broker, custom scripts</span>
+                </div>
+            </div>
+
+            <h3>Platform Compatibility</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Software</th>
+                            <th>RK3588</th>
+                            <th>QCS8550</th>
+                            <th>Jetson Orin</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NVIDIA DeepStream</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>Jetson only</td>
+                        </tr>
+                        <tr>
+                            <td>Hailo Tappas</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>Requires Hailo M.2</td>
+                        </tr>
+                        <tr>
+                            <td>RKNN-Toolkit2</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>Rockchip only</td>
+                        </tr>
+                        <tr>
+                            <td>Frigate NVR</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>All platforms</td>
+                        </tr>
+                        <tr>
+                            <td>Nx Witness</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>ARM supported</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Deployment Sizing -->
+        <section>
+            <h2>Deployment Sizing Guide</h2>
+            <p>Hardware requirements for small-medium industrial facilities and gated communities.</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Deployment</th>
+                            <th>Cameras</th>
+                            <th>Radars</th>
+                            <th>Edge Nodes</th>
+                            <th>PoE Switches</th>
+                            <th>Power (Total)</th>
+                            <th>Storage (30d)</th>
+                            <th>Est. Budget</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Small Gate Community</td>
+                            <td>25–30</td>
+                            <td>1</td>
+                            <td>1× RK3588+Hailo</td>
+                            <td>1× 24-port</td>
+                            <td>~500W</td>
+                            <td>15–20 TB</td>
+                            <td>$5,000–7,000</td>
+                        </tr>
+                        <tr>
+                            <td>Medium Factory</td>
+                            <td>50</td>
+                            <td>2</td>
+                            <td>2× RK3588+Hailo</td>
+                            <td>2× 24-port</td>
+                            <td>~1,100W</td>
+                            <td>30–40 TB</td>
+                            <td>$12,000–15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Large Campus</td>
+                            <td>75–100</td>
+                            <td>2–4</td>
+                            <td>2× QCS8550 or 3× RK3588</td>
+                            <td>2× 48-port or 4× 24-port</td>
+                            <td>~1,800W</td>
+                            <td>50–80 TB</td>
+                            <td>$20,000–30,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout success">
+                <h4>✅ Quick Storage Formula</h4>
+                <p><strong>Standard Recording:</strong> Cameras × 4 Mbps × 0.04 × Days = TB<br>
+                   <strong>Smart Recording (motion):</strong> Reduce by 50–70%<br>
+                   <strong>Example:</strong> 50 cams × 4 Mbps × 0.04 × 30 days = ~24 TB (smart: ~8–12 TB)</p>
+            </div>
+        </section>
+
+        <!-- Alert & Notification Architecture -->
+        <section>
+            <h2>Alert & Notification Architecture</h2>
+            <p>Edge nodes process AI inference locally and trigger real-time alerts directly — no cloud dependency for critical notifications.</p>
+
+            <!-- Alert Flow Diagram -->
+            <div class="arch-container">
+                <!-- Edge Node Processing -->
+                <div class="arch-row">
+                    <div class="arch-block edge" style="min-width: 280px; max-width: 320px;">
+                        <div class="icon">🧠</div>
+                        <div class="title">Edge Node AI Pipeline</div>
+                        <div class="subtitle">Camera Feed → Inference → Event Detection</div>
+                        <div class="specs">Person | Vehicle | PPE | Intrusion | LPR</div>
+                    </div>
+                </div>
+
+                <div class="arch-connector">
+                    <div class="line"></div>
+                </div>
+                <div style="text-align: center; font-size: 0.65rem; color: var(--info); font-weight: 600;">Alert Decision Engine (Rules + Threshold + Dedup)</div>
+                <div class="arch-connector">
+                    <div class="line"></div>
+                </div>
+
+                <!-- Alert Methods Row -->
+                <div class="arch-row" style="flex-wrap: nowrap; gap: 0.4rem;">
+                    <div class="arch-block" style="background: linear-gradient(135deg, #00695c 0%, #4db6ac 100%); min-width: 75px;">
+                        <div class="icon">📡</div>
+                        <div class="title">MQTT</div>
+                        <div class="subtitle">Mosquitto</div>
+                        <div class="specs">&lt;100ms</div>
+                    </div>
+                    <div class="arch-block" style="background: linear-gradient(135deg, #0288d1 0%, #4fc3f7 100%); min-width: 75px;">
+                        <div class="icon">🔗</div>
+                        <div class="title">Webhook</div>
+                        <div class="subtitle">REST API</div>
+                        <div class="specs">&lt;500ms</div>
+                    </div>
+                    <div class="arch-block" style="background: linear-gradient(135deg, #0088cc 0%, #29b6f6 100%); min-width: 75px;">
+                        <div class="icon">✈️</div>
+                        <div class="title">Telegram</div>
+                        <div class="subtitle">Bot API</div>
+                        <div class="specs">&lt;1s</div>
+                    </div>
+                    <div class="arch-block" style="background: linear-gradient(135deg, #25d366 0%, #67e88e 100%); min-width: 75px;">
+                        <div class="icon">💬</div>
+                        <div class="title">WhatsApp</div>
+                        <div class="subtitle">Business</div>
+                        <div class="specs">&lt;2s</div>
+                    </div>
+                    <div class="arch-block" style="background: linear-gradient(135deg, #d32f2f 0%, #ef5350 100%); min-width: 75px;">
+                        <div class="icon">📧</div>
+                        <div class="title">Email</div>
+                        <div class="subtitle">SMTP</div>
+                        <div class="specs">1-5s</div>
+                    </div>
+                    <div class="arch-block" style="background: linear-gradient(135deg, #7b1fa2 0%, #ba68c8 100%); min-width: 75px;">
+                        <div class="icon">🔔</div>
+                        <div class="title">Siren</div>
+                        <div class="subtitle">GPIO/Relay</div>
+                        <div class="specs">&lt;50ms</div>
+                    </div>
+                </div>
+
+                <div class="arch-connector">
+                    <div class="line-horizontal"></div>
+                </div>
+
+                <!-- Receivers Row -->
+                <div class="arch-row" style="gap: 0.4rem;">
+                    <div class="arch-block camera" style="min-width: 90px;">
+                        <div class="icon">📊</div>
+                        <div class="title">Node-RED</div>
+                        <div class="specs">Dashboard</div>
+                    </div>
+                    <div class="arch-block camera" style="min-width: 90px;">
+                        <div class="icon">🏠</div>
+                        <div class="title">Home Assist</div>
+                        <div class="specs">Automation</div>
+                    </div>
+                    <div class="arch-block vms" style="min-width: 90px;">
+                        <div class="icon">🖥️</div>
+                        <div class="title">VMS</div>
+                        <div class="specs">Nx / Frigate</div>
+                    </div>
+                    <div class="arch-block" style="background: linear-gradient(135deg, #455a64 0%, #90a4ae 100%); min-width: 90px;">
+                        <div class="icon">👮</div>
+                        <div class="title">Security</div>
+                        <div class="specs">Mobile App</div>
+                    </div>
+                    <div class="arch-block" style="background: linear-gradient(135deg, #455a64 0%, #90a4ae 100%); min-width: 90px;">
+                        <div class="icon">👔</div>
+                        <div class="title">Management</div>
+                        <div class="specs">Escalation</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert Methods Table -->
+            <h3>Alert Methods Comparison</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Latency</th>
+                            <th>Complexity</th>
+                            <th>Snapshot</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MQTT</strong></td>
+                            <td>&lt;100ms</td>
+                            <td>Low</td>
+                            <td>Via URL</td>
+                            <td>IoT dashboards, Node-RED, Home Assistant</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Webhook/REST</strong></td>
+                            <td>&lt;500ms</td>
+                            <td>Low</td>
+                            <td>Base64/URL</td>
+                            <td>VMS integration, custom backends</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telegram Bot</strong></td>
+                            <td>&lt;1s</td>
+                            <td>Low</td>
+                            <td>✅ Inline</td>
+                            <td>Security guards, mobile alerts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WhatsApp Business</strong></td>
+                            <td>&lt;2s</td>
+                            <td>Medium</td>
+                            <td>✅ Inline</td>
+                            <td>Management alerts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email (SMTP)</strong></td>
+                            <td>1-5s</td>
+                            <td>Low</td>
+                            <td>✅ Attachment</td>
+                            <td>Logs, non-urgent alerts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Siren/Relay (GPIO)</strong></td>
+                            <td>&lt;50ms</td>
+                            <td>Low</td>
+                            <td>N/A</td>
+                            <td>Physical alarms, strobe lights</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Software Integration -->
+            <h3>Recommended Stack for PoC</h3>
+            <div class="software-grid">
+                <div class="software-item">
+                    <span class="component">MQTT Broker</span>
+                    <span class="options">Mosquitto (on edge or VMS)</span>
+                </div>
+                <div class="software-item">
+                    <span class="component">Primary Alert</span>
+                    <span class="options">Telegram Bot (free, instant)</span>
+                </div>
+                <div class="software-item">
+                    <span class="component">Dashboard</span>
+                    <span class="options">Node-RED + Grafana</span>
+                </div>
+                <div class="software-item">
+                    <span class="component">Escalation</span>
+                    <span class="options">WhatsApp / Email</span>
+                </div>
+            </div>
+
+            <div class="callout info">
+                <h4>💡 PoC Alert Flow</h4>
+                <p><strong>Edge Node</strong> detects event → publishes to <strong>MQTT</strong> →
+                   <strong>Telegram Bot</strong> sends photo + alert to security group →
+                   if no acknowledgment in 2 min → escalate to <strong>WhatsApp/Email</strong> (management)</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Ready to Deploy?</h2>
+            <p>VikaBot provides end-to-end industrial surveillance solutions — from hardware sourcing
+               to system integration and ongoing support.</p>
+            <a href="https://www.vikabot.com#contact" class="cta-button">Request Consultation</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025-2026 <a href="https://www.vikabot.com">VikaBot</a>. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;">
+            AI Hardware Solutions | India &amp; UAE
+        </p>
+    </footer>
+</body>
+</html>
