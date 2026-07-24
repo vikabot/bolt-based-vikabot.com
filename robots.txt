@@ -1,0 +1,78 @@
+# robots.txt for https://www.vikabot.com
+# Allow all search engine and AI crawlers full access to the site.
+
+User-agent: *
+Allow: /
+
+# --- AI assistants & AI search crawlers ---
+# Explicitly allowed so VikaBot content is discoverable and citable
+# in AI-powered search and chat answers (ChatGPT, Claude, Perplexity,
+# Google AI Overviews, etc.)
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+Sitemap: https://www.vikabot.com/sitemap.xml
