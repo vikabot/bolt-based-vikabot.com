@@ -34,69 +34,6 @@
             background: var(--bg);
         }
 
-        /* Header */
-        header {
-            background: var(--secondary);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 2rem;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            background: var(--white);
-            padding: 1rem 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .breadcrumb-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .breadcrumb span {
-            color: var(--text-light);
-        }
-
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
@@ -724,10 +661,6 @@
                 font-size: 1rem;
             }
 
-            nav {
-                display: none;
-            }
-
             .architecture-diagram {
                 font-size: 0.65rem;
                 padding: 1rem;
@@ -749,36 +682,13 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <a href="https://www.vikabot.com" class="logo">Vika<span>Bot</span></a>
-            <nav>
-                <a href="https://www.vikabot.com#home">Home</a>
-                <a href="https://www.vikabot.com#products">Products</a>
-                <a href="https://www.vikabot.com#services">Services</a>
-                <a href="https://www.vikabot.com#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="breadcrumb-content">
-            <a href="https://www.vikabot.com">Home</a> &raquo;
-            <a href="https://www.vikabot.com#products">Products</a> &raquo;
-            <a href="#">Smart Edge Devices</a> &raquo;
-            <span>AI Surveillance Monitoring Use-Case</span>
-        </div>
-    </div>
-
     <!-- Hero -->
-    <section class="hero">
+    <header class="hero">
         <h1>Industrial Campus <span>AI Surveillance</span></h1>
         <p>Multi-sensor perimeter security for small-medium factories, campuses, and gated communities.
            Scalable edge AI solutions combining cameras with radar integration at vehicle entrances.</p>
         <div class="scope-badge">PoC Scope: 50–100 Cameras + Vehicle Entrance Radars</div>
-    </section>
+    </header>
 
     <div class="container">
         <!-- Use Case Profile -->
