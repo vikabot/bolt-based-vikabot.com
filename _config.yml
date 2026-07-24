@@ -1,6 +1,6 @@
 # Site settings
 title: VikaBot
-email: support@vikabot.com
+email: contact@vikabot.com
 description: >-
   Leading AI hardware infrastructure solutions provider, delivering 
   comprehensive technology services from consultation to implementation 
@@ -38,7 +38,7 @@ navigation:
 # Social links
 social:
   - platform: email
-    url: mailto:support@vikabot.com
+    url: mailto:contact@vikabot.com
   - platform: linkedin
     url: https://linkedin.com/company/vikabot
 

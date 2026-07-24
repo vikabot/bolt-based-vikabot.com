@@ -34,7 +34,7 @@ permalink: /contact/
                                 </svg>
                                 <div>
                                     <h3 class="font-semibold text-black mb-1">Phone</h3>
-                                    <p class="text-gray-600">Available upon request</p>
+                                    <p class="text-gray-600">+971 54 7426099 and Whatsapp: +1 (555) 891-4201</p>
                                 </div>
                             </div>
                             
@@ -45,28 +45,9 @@ permalink: /contact/
                                 </svg>
                                 <div>
                                     <h3 class="font-semibold text-black mb-1">Location</h3>
-                                    <p class="text-gray-600">Serving clients globally</p>
+                                    <p class="text-gray-600">India, UAE</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-gray-50 p-6 border border-gray-200">
-                        <h3 class="font-bold text-black mb-4">Business Hours</h3>
-                        <div class="space-y-2 text-gray-600">
-                            <div class="flex justify-between">
-                                <span>Monday - Friday</span>
-                                <span>9:00 AM - 6:00 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Saturday</span>
-                                <span>10:00 AM - 2:00 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Sunday</span>
-                                <span>Closed</span>
-                            </div>
-                            <p class="text-sm mt-4">Emergency support available 24/7 for AMC customers</p>
                         </div>
                     </div>
                 </div>
